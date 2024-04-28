@@ -1,12 +1,10 @@
-import Image from "next/image";
 import React from "react";
-import img from "../../assets/images/programming.png";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 
-const HomeSection = () => {
+const HomeSection = ({ setSection }) => {
   return (
     <div className="pt-[10%] flex px-[10%] ">
-      <div className="ml-[40%] w-[60%] flex bg-[rgba(255,255,255,0.1)] backdrop-blur-[10px] rounded-xl border border-white border-opacity-20 p-4">
+      <div className="ml-[40%] w-[60%] flex bg-[rgba(255,255,255,0.1)] backdrop-blur-[10px] shadow-lg rounded-xl border border-white border-opacity-20 p-4">
         <div className="w-[100%] flex flex-col justify-center">
           <div className="text-[2rem] font-bold">
             Hi, I'm{" "}
@@ -45,12 +43,19 @@ const HomeSection = () => {
             </a>
           </div>
           <div className="flex gap-[10px] mt-[20px]">
-            <button className="bg-dark_orange text-dark_blue px-[20px] py-[10px] rounded-md">
+            <button
+              onClick={() => {
+                setSection("contact");
+              }}
+              className="bg-dark_orange text-dark_blue px-[20px] py-[10px] rounded-md"
+            >
               Hire Me
             </button>
-            <button className="bg-[#2f2f2f] text-dark_orange px-[20px] py-[10px] rounded-md">
-              Download CV
-            </button>
+            <a href="/assets/pdf/resume.pdf" download>
+              <button className="bg-dark_blue text-dark_orange px-[20px] py-[10px] rounded-md">
+                Download CV
+              </button>
+            </a>
           </div>
         </div>
       </div>
