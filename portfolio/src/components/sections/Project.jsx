@@ -62,49 +62,53 @@ const Project = () => {
     },
   ];
   return (
-    <div className='md:pt-[7%] md:px-[10%] pt-[15%] px-[5%]'>
-      <div className='md:text-[30px] text-[20px] font-bold mb-4'>Projects</div>
-      <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8'>
+    <div className="md:pt-[7%] md:px-[10%] pt-[15%] px-[5%]">
+      <div className="md:text-[30px] text-[20px] font-bold mb-4">Projects</div>
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
         {projects.map((project, index) => (
           <div
             key={index}
-            className='flex flex-col gap-[10px] p-4 bg-[rgba(255,255,255,0.1)] backdrop-blur-[10px] rounded-lg overflow-hidden shadow-lg transform transition-all w-full'>
-            <div className=''>
+            className="flex flex-col gap-[10px] p-4 bg-[rgba(255,255,255,0.1)] backdrop-blur-[10px] rounded-lg overflow-hidden shadow-lg transform transition-all w-full"
+          >
+            <div className="">
               <img src={project.img} alt={project.title} />
             </div>
-            <div className=''>
-              <div className='md:text-[1.5rem] text-[1.2rem] font-bold'>
+            <div className="">
+              <div className="md:text-[1.5rem] text-[1.2rem] font-bold">
                 {project.title}
               </div>
-              <div className='text-[1rem] text-dark_orange font-bold'>
+              <div className="text-[1rem] text-dark_orange font-bold">
                 {project.type}
               </div>
-              <div className='md:text-[1rem] text-[14px] transition-all'>
+              <div className="md:text-[1rem] text-[14px] transition-all">
                 {project.description}
               </div>
-              <div className='flex gap-[10px] transition-all mt-4 items-center justify-center'>
+              <div className="flex gap-[10px] transition-all mt-4 items-center justify-center">
                 <a
-                  className='transform transition-all hover:scale-150 hover:cursor-pointer'
+                  className="transform transition-all hover:scale-150 hover:cursor-pointer"
                   href={project.github}
-                  target='_blank'
-                  rel='noreferrer'>
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaGithub size={24} />
                 </a>
                 {project.demo.length > 0 && (
                   <a
-                    className='transform transition-all hover:scale-150 hover:cursor-pointer'
+                    className="transform transition-all hover:scale-150 hover:cursor-pointer"
                     href={project.demo}
-                    target='_blank'
-                    rel='noreferrer'>
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <BsGlobe2 size={24} />
                   </a>
                 )}
               </div>
-              <div className='flex gap-[10px] flex-wrap mt-5 text-[12px] items-center justify-center'>
+              <div className="flex gap-[10px] flex-wrap mt-5 text-[12px] items-center justify-center">
                 {project.tech_stack.map((tech, index) => (
                   <div
-                    className='bg-dark_blue text-dark_orange px-4 py-2 rounded'
-                    key={index}>
+                    className="bg-dark_blue text-dark_orange px-4 py-2 rounded"
+                    key={index}
+                  >
                     {tech}
                   </div>
                 ))}

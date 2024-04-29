@@ -1,8 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import theme from "@/theme";
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from "@mui/material/styles";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
-            <div className="relative h-[100vh] overflow-hidden w-[100vw] text-dark_blue bg-[url('/assets/images/programmer_bg.png')] bg-cover bg-no-repeat">
+            <div className="relative h-[100vh] overflow-hidden w-[100vw] text-dark_blue bg-[url('/assets/images/portfolio-bg-mob.png')] md:bg-[url('/assets/images/portfolio-bg-laptop.png')] bg-cover bg-no-repeat">
               <div>{children}</div>
             </div>
           </ThemeProvider>
