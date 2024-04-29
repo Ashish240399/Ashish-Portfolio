@@ -36,7 +36,7 @@ export default function Home() {
   }, [section]);
 
   return (
-    <div className="w-[100%] h-[100vh] overflow-auto pb-5">
+    <div className="lg:px-[5%] w-[100%] h-[100vh] overflow-auto pb-5">
       <Navbar setSection={setSection} section={section} />
       <div ref={homeRef} id="home">
         <HomeSection setSection={setSection} />
@@ -48,7 +48,7 @@ export default function Home() {
         <Project />
       </div>
       <div ref={contactRef} id="contact">
-          <Contact />
+        <Contact />
       </div>
     </div>
   );
