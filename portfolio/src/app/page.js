@@ -14,6 +14,9 @@ export default function Home() {
   const contactRef = useRef(null);
 
   useEffect(() => {
+    if (section == "hire") {
+      setSection("contact");
+    }
     switch (section) {
       case "home":
         homeRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -21,7 +24,7 @@ export default function Home() {
       case "skills":
         skillsRef.current?.scrollIntoView({ behavior: "smooth" });
         break;
-      case "project":
+      case "projects":
         projectsRef.current?.scrollIntoView({ behavior: "smooth" });
         break;
       case "contact":
@@ -45,7 +48,7 @@ export default function Home() {
         <Project />
       </div>
       <div ref={contactRef} id="contact">
-        <Contact />
+          <Contact />
       </div>
     </div>
   );
