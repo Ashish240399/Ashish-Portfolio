@@ -134,24 +134,26 @@ const Skills = () => {
     },
   ];
   return (
-    <div className='md:pt-[7%] md:px-[10%] pt-[15%] px-[5%]'>
-      <div className='md:text-[30px] text-[20px] font-bold mb-4'>Skills</div>
-      <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8'>
+    <div className="lg:pt-[7%] md:pt-[11%] md:px-[10%] pt-[15%] px-[5%]">
+      <div className="md:text-[30px] text-[20px] font-bold mb-4">Skills</div>
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
         {SkillsData.map((skills, id) => (
           <div
-            className='w-[100%] bg-[rgba(255,255,255,0.1)] backdrop-blur-[10px] shadow-lg rounded-xl border border-white border-opacity-20 p-4 h-full'
-            key={id}>
-            <div className='md:text-[1.5rem] text-[18px]'>{skills.section}</div>
-            <div className='grid grid-cols-3 justify-between mt-4 gap-[30px]'>
+            className="w-[100%] bg-[rgba(255,255,255,0.1)] backdrop-blur-[10px] shadow-lg rounded-xl border border-white border-opacity-20 p-4 h-full"
+            key={id}
+          >
+            <div className="md:text-[1.5rem] text-[18px]">{skills.section}</div>
+            <div className="grid grid-cols-3 justify-between mt-4 gap-[30px]">
               {skills.data.map((data, id) => (
                 <div
-                  className='flex flex-col justify-center items-center'
-                  key={id}>
+                  className="flex flex-col justify-center items-center"
+                  key={id}
+                >
                   <img
-                    className='w-[9vw] md:w-[4vw] lg:w-[3vw]'
+                    className="w-[9vw] md:w-[4vw] lg:w-[3vw]"
                     src={data.icon}
                   />
-                  <div className='md:text-[16px] text-[14px]'>{data.name}</div>
+                  <div className="md:text-[16px] text-[14px]">{data.name}</div>
                 </div>
               ))}
             </div>

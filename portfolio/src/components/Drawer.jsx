@@ -14,7 +14,7 @@ import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 import FolderSpecialIcon from "@mui/icons-material/FolderSpecial";
 import PersonIcon from "@mui/icons-material/Person";
 
-export default function TopDrawer({ setSection }) {
+export default function TopDrawer({ setTrigger, setSection }) {
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -40,17 +40,20 @@ export default function TopDrawer({ setSection }) {
         background: "rgb(47,50,64)",
         color: "rgb(251,126,94)",
       }}
-      role='presentation'
+      role="presentation"
       onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}>
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
       <List>
         {["Home", "Skills", "Projects", "Contact"].map((text, index) => (
           <ListItem
             onClick={() => {
               setSection(text.toLowerCase());
+              setTrigger((prev) => !prev);
             }}
             key={text}
-            disablePadding>
+            disablePadding
+          >
             <ListItemButton>
               <ListItemIcon sx={{ color: "rgb(251,126,94)" }}>
                 {index == 0 ? (
@@ -82,7 +85,8 @@ export default function TopDrawer({ setSection }) {
           <Drawer
             anchor={anchor}
             open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}>
+            onClose={toggleDrawer(anchor, false)}
+          >
             {list(anchor)}
           </Drawer>
         </React.Fragment>

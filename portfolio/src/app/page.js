@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [section, setSection] = useState("home");
+  const [trigger, setTrigger] = useState(false);
   const homeRef = useRef(null);
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
@@ -33,11 +34,15 @@ export default function Home() {
       default:
         break;
     }
-  }, [section]);
+  }, [section, trigger]);
 
   return (
     <div className="lg:px-[5%] w-[100%] h-[100vh] overflow-auto pb-5">
-      <Navbar setSection={setSection} section={section} />
+      <Navbar
+        setTrigger={setTrigger}
+        setSection={setSection}
+        section={section}
+      />
       <div ref={homeRef} id="home">
         <HomeSection setSection={setSection} />
       </div>

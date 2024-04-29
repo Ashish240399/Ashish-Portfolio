@@ -62,7 +62,7 @@ const Project = () => {
     },
   ];
   return (
-    <div className="md:pt-[7%] md:px-[10%] pt-[15%] px-[5%]">
+    <div className="lg:pt-[7%] md:pt-[11%] md:px-[10%] pt-[15%] px-[5%]">
       <div className="md:text-[30px] text-[20px] font-bold mb-4">Projects</div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
         {projects.map((project, index) => (
